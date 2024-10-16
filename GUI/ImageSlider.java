@@ -6,21 +6,21 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class ImageSlider {
- 
-    private String[] imageFiles = 
-    {"D:\\Документы\\2학기\\객체지향프로그래밍\\lab7_UTF-8\\lab7_UTF-8/dog.png",
-    "D:\\Документы\\2학기\\객체지향프로그래밍\\lab7_UTF-8\\lab7_UTF-8/bird.png",
-    "D:\\Документы\\2학기\\객체지향프로그래밍\\lab7_UTF-8\\lab7_UTF-8/cat.png",
-     "D:\\Документы\\2학기\\객체지향프로그래밍\\lab7_UTF-8\\lab7_UTF-8/pig.png",
-     "D:\\Документы\\2학기\\객체지향프로그래밍\\lab7_UTF-8\\lab7_UTF-8/rabbit.png"};
+
+    private String[] imageFiles = {
+            "D:\\Документы\\2학기\\객체지향프로그래밍\\lab7_UTF-8\\lab7_UTF-8/dog.png",
+            "D:\\Документы\\2학기\\객체지향프로그래밍\\lab7_UTF-8\\lab7_UTF-8/bird.png",
+            "D:\\Документы\\2학기\\객체지향프로그래밍\\lab7_UTF-8\\lab7_UTF-8/cat.png",
+            "D:\\Документы\\2학기\\객체지향프로그래밍\\lab7_UTF-8\\lab7_UTF-8/pig.png",
+            "D:\\Документы\\2학기\\객체지향프로그래밍\\lab7_UTF-8\\lab7_UTF-8/rabbit.png"
+    };
     private int currentIndex = 0;
     private JLabel imageLabel;
 
     public ImageSlider() {
-
         JFrame frame = new JFrame("이미지 슬라이더");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(400, 300);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new BorderLayout());
 
         JPanel buttonPanel = new JPanel();
@@ -42,7 +42,6 @@ public class ImageSlider {
 
         frame.add(imageLabel, BorderLayout.CENTER);
         frame.add(buttonPanel, BorderLayout.SOUTH);
-
 
         firstButton.addActionListener(new ActionListener() {
             @Override
@@ -83,13 +82,12 @@ public class ImageSlider {
         frame.setVisible(true);
     }
 
-
     private void displayImage(int index) {
         ImageIcon icon = new ImageIcon(imageFiles[index]);
         imageLabel.setIcon(icon);
     }
 
-    public static void main(String[] args) { 
-        new ImageSlider();
+    public static void main(String[] args) {
+        new ImageSlider(); // This will launch the Image Slider when executed
     }
 }
